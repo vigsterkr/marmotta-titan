@@ -91,7 +91,7 @@ public class TitanStoreProvider implements StoreProvider {
 		Configuration conf = new BaseConfiguration();
 		List<String> titanConf = listConfigurationKeys("titan");
 		for (String key : titanConf) {
-			String titanKey = key.replaceFirst("^titan.", "");
+			String titanKey = key.replaceFirst("^titan\\.", "");
 			conf.setProperty(titanKey,  getStringConfiguration(key));
 		}
 
