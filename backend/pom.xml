@@ -27,12 +27,12 @@
         <version>3.2.0-SNAPSHOT</version>
     </parent>
 
-    <artifactId>marmotta-backend-virtuoso</artifactId>
+    <artifactId>marmotta-backend-titan</artifactId>
 
-    <name>Apache Marmotta Platform: Virtuoso Backend</name>
+    <name>Apache Marmotta Platform: Titan Backend</name>
     <description>
-        This module provides an Apache Marmotta backend using OpenLink Virtuoso
-        as store. This backend is still experimental.
+        This module provides an Apache Marmotta backend using Titan Graph DB
+        as store.
     </description>
 
     <build>
@@ -133,7 +133,7 @@
         <dependency>
             <groupId>com.thinkaurelius.titan</groupId>
             <artifactId>titan-core</artifactId>
-            <version>4.2.0</version>
+            <version>0.4.2</version>
         </dependency>
         <dependency>
             <groupId>com.tinkerpop.blueprints</groupId>
