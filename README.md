@@ -8,8 +8,8 @@ In the Marmotta ```properties``` file simply add the configuration properties th
 
 For example a configuration for a ```Titan Graph``` with a ```HBase``` backend at ```192.168.1.1```:
 ```
-titan.storage.storage.backend = hbase
-titan.storage.storage.hostname = 192.168.1.1
+titan.storage.backend = hbase
+titan.storage.hostname = 192.168.1.1
 ```
 
 For more configuration options of Titan check [here](https://github.com/thinkaurelius/titan/wiki/Graph-Configuration)
