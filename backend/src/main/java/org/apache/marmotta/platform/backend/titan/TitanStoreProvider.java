@@ -28,12 +28,20 @@ import com.thinkaurelius.titan.graphdb.database.StandardTitanGraph;
 
 import com.tinkerpop.blueprints.oupls.sail.GraphSail;
 
+import org.openrdf.repository.sail.SailRepository;
+import org.openrdf.sail.Sail;
+import org.openrdf.sail.NotifyingSail;
+
 import org.apache.commons.configuration.Configuration;
+import org.apache.commons.configuration.BaseConfiguration;
 
 import javax.enterprise.context.ApplicationScoped;
 import javax.enterprise.event.Observes;
 import javax.inject.Inject;
 
+import java.util.List;
+
+import org.slf4j.Logger;
 /**
  * A store provider implementation for Apache Marmotta providing instances of Titan.
  *
@@ -89,10 +97,10 @@ public class TitanStoreProvider implements StoreProvider {
 	 */
 	public TitanGraph createTitanGraph() {
 		Configuration conf = new BaseConfiguration();
-		List<String> titanConf = listConfigurationKeys("titan");
+		List<String> titanConf = configurationService.listConfigurationKeys("titan");
 		for (String key : titanConf) {
 			String titanKey = key.replaceFirst("^titan\\.", "");
-			conf.setProperty(titanKey,  getStringConfiguration(key));
+			conf.setProperty(titanKey, configurationService.getStringConfiguration(key));
 		}
 
 		return TitanFactory.open(conf);
