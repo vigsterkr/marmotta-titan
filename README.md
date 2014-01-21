@@ -1,3 +1,7 @@
+# UPDATE
+it has been integrated into Apache Marmotta 3.2.0-SNAPSHOT as [MARMOTTA-424](https://issues.apache.org/jira/browse/MARMOTTA-424) so updates are going to happen directly in Marmotta's repository
+
+
 marmotta-titan
 ==============
 
